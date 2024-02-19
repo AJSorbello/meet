@@ -5,6 +5,10 @@ The objective of this project is to build a serverless, progressive web applicat
 
 This README outlines the features and corresponding user stories of the project.
 
+# Meet App Use
+
+The Meet app is a location-based platform that enables users to schedule and join meetings with their contacts. We leverage serverless functions to efficiently handle geocoding tasks, converting user-entered addresses into geographic coordinates for accurate mapping and location-based functionalities. By utilizing serverless technology, we ensure scalability and cost-effectiveness, delivering a seamless and responsive user experience while optimizing resource utilization and infrastructure costs.
+
 ## User Stories
 
 | User Story | Description | Outcome |
