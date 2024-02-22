@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/AJSorbello/meet.git/static/css/main.f855e6bc.css",
-    "main.js": "/AJSorbello/meet.git/static/js/main.fc090536.js",
-    "static/js/592.b7cdff91.chunk.js": "/AJSorbello/meet.git/static/js/592.b7cdff91.chunk.js",
-    "service-worker.js": "/AJSorbello/meet.git/service-worker.js",
-    "static/media/logo.svg": "/AJSorbello/meet.git/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
-    "index.html": "/AJSorbello/meet.git/index.html",
-    "main.f855e6bc.css.map": "/AJSorbello/meet.git/static/css/main.f855e6bc.css.map",
-    "main.fc090536.js.map": "/AJSorbello/meet.git/static/js/main.fc090536.js.map",
-    "592.b7cdff91.chunk.js.map": "/AJSorbello/meet.git/static/js/592.b7cdff91.chunk.js.map"
+    "main.css": "/meet/static/css/main.f855e6bc.css",
+    "main.js": "/meet/static/js/main.0152a572.js",
+    "static/js/592.b7cdff91.chunk.js": "/meet/static/js/592.b7cdff91.chunk.js",
+    "service-worker.js": "/meet/service-worker.js",
+    "static/media/logo.svg": "/meet/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/meet/index.html",
+    "main.f855e6bc.css.map": "/meet/static/css/main.f855e6bc.css.map",
+    "main.0152a572.js.map": "/meet/static/js/main.0152a572.js.map",
+    "592.b7cdff91.chunk.js.map": "/meet/static/js/592.b7cdff91.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.fc090536.js"
+    "static/js/main.0152a572.js"
   ]
 }
