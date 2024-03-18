@@ -26,20 +26,28 @@ describe("<Event /> component", () => {
     expect(EventComponent.getByText(startTime)).toBeInTheDocument();
   });
 
+  //  test('renders event details button with the title (show details)', () => {
+  //   expect(EventComponent.queryByText('show details')).toBeInTheDocument();
+  // });
+
   test("by default, event's details section should be hidden", () => {
     expect(EventComponent.container.querySelector(".details")).not.toBeInTheDocument();
   });
   
   test("toggles between show and hide details when clicked", () => {
-    // Check initial state
-    expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
+  // Check initial state
+  expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
 
-    // Simulate a click and check if the text changes to "Hide Details"
-    fireEvent.click(EventComponent.getByText("Show Details"));
-    expect(EventComponent.getByText("Hide Details")).toBeInTheDocument();
+  // Simulate a click
+  fireEvent.click(EventComponent.getByText("Show Details"));
 
-    // Simulate another click and check if the text changes back to "Show Details"
-    fireEvent.click(EventComponent.getByText("Hide Details"));
-    expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
+  // Check if the text changes to "Hide Details"
+  expect(EventComponent.getByText("Hide Details")).toBeInTheDocument();
+
+  // Simulate another click
+  fireEvent.click(EventComponent.getByText("Hide Details"));
+
+  // Check if the text changes back to "Show Details"
+  expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
   });
 });
