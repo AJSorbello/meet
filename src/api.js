@@ -19,12 +19,13 @@ const checkToken = async (accessToken) => {
 const getToken = async (code) => {
   try {
     const encodeCode = encodeURIComponent(code);
-    const response = await fetch("https://fhaj104cs8.execute-api.us-east-1.amazonaws.com/dev/api/token" + '/' + encodeCode);
+    const response = await fetch(`https://fhaj104cs8.execute-api.us-east-1.amazonaws.com/dev/api/token/${encodeCode}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
     const { access_token } = await response.json();
     access_token && localStorage.setItem("access_token", access_token);
+
     return access_token;
   } catch (error) {
     console.error(error);
@@ -33,7 +34,7 @@ const getToken = async (code) => {
 
 export const getAccessToken = async () => {
   let accessToken = localStorage.getItem("access_token");
-  
+
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
