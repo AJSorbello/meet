@@ -4,7 +4,7 @@ const NumberOfEvents = ({currentNOE, setCurrentNOE}) => {
 
   const handleInputChange = (event) => {
   const value = Number(event.target.value);
-  if (value >= 1 && value <= 32) {
+  if (value >= 0 && value <= 32) {
     setNumberOfEvents(value);
     setCurrentNOE(value);
   } else {
@@ -14,8 +14,8 @@ const NumberOfEvents = ({currentNOE, setCurrentNOE}) => {
     return (
     <div className="NumberOfEvents">
       <label htmlFor="numberOfEventsInput">Number of Events: </label>
-     <input
-  type="text"
+<input
+  type="number"
   id="number-of-events"
   className="numberofevents"
   value={numberOfEvents}
