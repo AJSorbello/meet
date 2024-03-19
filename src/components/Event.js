@@ -11,10 +11,8 @@ const Event = ({ event }) => {
     <li className="event">
       <h2>{event.summary}</h2>
       <p>{event.location}</p>
-      <p>Start Date: {startDate}</p>
-      <p>Start Time: {start}</p>
-      <p>End Date: {endDate}</p>
-      <p>End Time: {end}</p> 
+      <p>Date: {startDate}</p>
+      <p>Time: {start} - {end}</p>
       {showDetails && <p className="details">{event?.description}</p>}
       <button className="details-btn" onClick={() => setShowDetails(!showDetails)}>
         {showDetails ? 'Hide Details' : 'Show Details'}
