@@ -21,10 +21,11 @@ describe("<Event /> component", () => {
     expect(EventComponent.queryByText(allEvents[0].location)).toBeInTheDocument();
   });
 
-  test("renders event start time", () => {
-    const startTime = `Start Time: ${new Date(allEvents[0].start.dateTime).toLocaleTimeString()}`;
-    expect(EventComponent.getByText(startTime)).toBeInTheDocument();
-  });
+test("renders event start time", () => {
+  const startTime = new Date(allEvents[0].start.dateTime).toLocaleTimeString();
+  const regex = new RegExp(`Time: ${startTime} -`, 'i');
+  expect(EventComponent.getByText(regex)).toBeInTheDocument();
+});
 
   //  test('renders event details button with the title (show details)', () => {
   //   expect(EventComponent.queryByText('show details')).toBeInTheDocument();
