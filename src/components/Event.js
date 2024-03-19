@@ -5,7 +5,7 @@ const Event = ({ event }) => {
   const start = new Date(event.start.dateTime).toLocaleTimeString();
   const end = new Date(event.end.dateTime).toLocaleTimeString();
   const startDate = new Date(event.start.dateTime).toLocaleDateString();
-  const endDate = new Date(event.end.dateTime).toLocaleDateString();
+
 
   return (
     <li className="event">
@@ -13,7 +13,6 @@ const Event = ({ event }) => {
       <p>{event.location}</p>
       <p>Date: {startDate}</p>
       <p>Time: {start} - {end}</p>
-      {showDetails && <p className="details">{event?.description}</p>}
       <button className="details-btn" onClick={() => setShowDetails(!showDetails)}>
         {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
