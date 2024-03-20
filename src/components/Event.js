@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -6,6 +6,19 @@ const Event = ({ event }) => {
   const end = new Date(event.end.dateTime).toLocaleTimeString();
   const startDate = new Date(event.start.dateTime).toLocaleDateString();
 
+  const processChange = () => {
+    // Your scroll event handling code here
+  };
+
+  useEffect(() => {
+    if (showDetails) {
+      window.addEventListener("scroll", processChange);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", processChange);
+    };
+  }, [showDetails]);
 
   return (
     <li className="event">
@@ -22,7 +35,6 @@ const Event = ({ event }) => {
           <p>{event.description}</p>
           <br></br>
           <h4>Event status</h4>
-          <p>{event.status}</p>
         </div>
         ) : null}
     </li>
