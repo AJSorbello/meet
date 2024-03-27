@@ -5,8 +5,9 @@ import App from "../App";
 
 describe('<EventList /> component', () => {
  let EventListComponent;
- beforeEach(() => {
-   EventListComponent = render(<EventList />);
+ beforeEach(async () => { // Make this function async
+   const allEvents = await getEvents(); // Fetch events before rendering
+   EventListComponent = render(<EventList events={allEvents} />); // Pass events prop
  })
 
  test('has an element with "list" role', () => {

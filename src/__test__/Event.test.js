@@ -21,34 +21,30 @@ describe("<Event /> component", () => {
     expect(EventComponent.queryByText(allEvents[0].location)).toBeInTheDocument();
   });
 
-test("renders event start time", () => {
-  const startTime = new Date(allEvents[0].start.dateTime).toLocaleTimeString();
-  const regex = new RegExp(`Time: ${startTime} -`, 'i');
-  expect(EventComponent.getByText(regex)).toBeInTheDocument();
-});
-
-  //  test('renders event details button with the title (show details)', () => {
-  //   expect(EventComponent.queryByText('show details')).toBeInTheDocument();
-  // });
+  test("renders event start time", () => {
+    const startTime = new Date(allEvents[0].start.dateTime).toLocaleTimeString();
+    const regex = new RegExp(`Time: ${startTime} -`, 'i');
+    expect(EventComponent.getByText(regex)).toBeInTheDocument();
+  });
 
   test("by default, event's details section should be hidden", () => {
     expect(EventComponent.container.querySelector(".details")).not.toBeInTheDocument();
   });
   
   test("toggles between show and hide details when clicked", () => {
-  // Check initial state
-  expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
+    // Check initial state
+    expect(EventComponent.getByText("Show details")).toBeInTheDocument();
 
-  // Simulate a click
-  fireEvent.click(EventComponent.getByText("Show Details"));
+    // Simulate a click
+    fireEvent.click(EventComponent.getByText("Show details"));
 
-  // Check if the text changes to "Hide Details"
-  expect(EventComponent.getByText("Hide Details")).toBeInTheDocument();
+    // Check the state after the click
+    expect(EventComponent.getByText("Hide details")).toBeInTheDocument();
 
-  // Simulate another click
-  fireEvent.click(EventComponent.getByText("Hide Details"));
+    // Simulate another click
+    fireEvent.click(EventComponent.getByText("Hide details"));
 
-  // Check if the text changes back to "Show Details"
-  expect(EventComponent.getByText("Show Details")).toBeInTheDocument();
+    // Check if the text changes back to "show details"
+    expect(EventComponent.getByText("Show details")).toBeInTheDocument();
   });
 });

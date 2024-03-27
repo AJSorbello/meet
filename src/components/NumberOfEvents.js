@@ -31,12 +31,12 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
 
   return (
     <div className="NumberOfEvents">
-      <label htmlFor="numberOfEventsInput">Number of Events: </label>
-      <input
-        type="number"
-        id="number-of-events"
-        className="numberofevents"
-        value={numberOfEvents}
+      <label htmlFor="number-of-events">Number of Events:</label>
+      <input 
+        className="numberofevents" 
+        id="number-of-events" 
+        type="number" 
+        value={numberOfEvents} 
         onChange={handleInputChange}
         onKeyUp={processChange}
       />
