@@ -3,6 +3,10 @@
 import mockData from "./mock-data";
 
 export const extractLocations = (events) => {
+  if (!Array.isArray(events)) {
+    console.error('events is not an array:', events);
+    return [];
+  }
   const extractedLocations = events.map((event) => event.location);
   const locations = [...new Set(extractedLocations)];
   return locations;
