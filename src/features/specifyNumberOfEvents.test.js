@@ -1,13 +1,13 @@
 import { defineFeature, loadFeature } from 'jest-cucumber';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import NumberOfEvents from '../components/NumberOfEvents';
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
 
-defineFeature(feature, test => {
+defineFeature(feature, (test) => {
   let component;
   const setCurrentNOE = jest.fn();
-  
+
   test('When user hasn’t specified a number, 32 events are shown by default', ({ given, then }) => {
     given('the NumberOfEvents component is rendered', () => {
       component = render(<NumberOfEvents currentNOE={32} setCurrentNOE={setCurrentNOE} />);
@@ -20,20 +20,25 @@ defineFeature(feature, test => {
   });
 
   test('User can change the number of events displayed', ({ given, when, then, and }) => {
-    	given('the NumberOfEvents component is rendered', () => {
+    let inputElement;
 
-    	});
-
-    	when('the user specifies a different number of events', () => {
-
-    	});
-
-    	then('the number of events displayed should update accordingly', () => {
-
-    	});
-
-    	and('the user should see the specified number of events displayed', () => {
-
-    	});
+    given('the NumberOfEvents component is rendered', () => {
+      component = render(<NumberOfEvents currentNOE={32} setCurrentNOE={setCurrentNOE} />);
+      inputElement = component.getByLabelText('Number of Events:');
     });
+
+    when('the user specifies a different number of events', () => {
+      fireEvent.change(inputElement, { target: { value: '20' } });
+    });
+
+    then('the number of events displayed should update accordingly', async () => {
+      await waitFor(() => {
+        expect(setCurrentNOE).toHaveBeenCalledWith(20); // Assuming setCurrentNOE updates the number of events
+      });
+    });
+
+    and('the user should see the specified number of events displayed', () => {
+      expect(inputElement.value).toBe('20');
+    });
+  });
 });

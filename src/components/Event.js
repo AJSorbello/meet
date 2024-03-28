@@ -4,12 +4,12 @@ const Event = ({event}) => {
   const [showDetails, setShowDetails] = useState(false);
   // Convert the event start time to the viewer's local time
 const startTime = new Date(event.start.dateTime).toLocaleTimeString();
-
+const endTime = new Date(event.end.dateTime).toLocaleTimeString();
   return (
     <li className="event">
       <h3>{event?.summary}</h3>
       <p>{event?.location}</p>
-      <p>Time: {startTime} - {(new Date(event.created)).toUTCString()}</p>
+      <p>Time: {startTime} - {endTime}</p>
       {showDetails ?
         <p className="details">{event.description}</p> :
         null
