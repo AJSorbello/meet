@@ -19,7 +19,11 @@ const fetchData = useCallback(async () => {
   const filteredEvents = currentCity === "See all cities" ?
     allEvents :
     allEvents.filter(event => event.location === currentCity)
+     if (Array.isArray(filteredEvents)) {
   setEvents(filteredEvents.slice(0, currentNOE));
+   } else {
+    console.error('filteredEvents is not an array:', filteredEvents);
+  }
   setAllLocations(extractLocations(allEvents));
 }, [currentCity, currentNOE]);
 
