@@ -7,10 +7,13 @@ const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
 defineFeature(feature, (test) => {
   let component;
   const setCurrentNOE = jest.fn();
-
+beforeEach(() => {
+  component = render(
+    <NumberOfEvents currentNOE={32} setCurrentNOE={setCurrentNOE} setErrorAlert={() => { }} />
+  )
+})
   test('When user hasn’t specified a number, 32 events are shown by default', ({ given, then }) => {
     given('the NumberOfEvents component is rendered', () => {
-      component = render(<NumberOfEvents currentNOE={32} setCurrentNOE={setCurrentNOE} />);
     });
 
     then('the user should see 32 events displayed by default', () => {
@@ -23,7 +26,6 @@ defineFeature(feature, (test) => {
     let inputElement;
 
     given('the NumberOfEvents component is rendered', () => {
-      component = render(<NumberOfEvents currentNOE={32} setCurrentNOE={setCurrentNOE} />);
       inputElement = component.getByLabelText('Number of Events:');
     });
 
