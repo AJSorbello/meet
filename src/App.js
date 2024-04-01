@@ -31,25 +31,26 @@ const App = () => {
     }
   }, [currentCity, currentNOE]);
 
-useEffect(() => {
-   if (!navigator.onLine) {
-     setWarningAlert("You are currently offline. Some features may not work.");
-   } else {
-     setWarningAlert(""); 
-     // set the warning alert message to a non-empty string
-   }
+  useEffect(() => {
+    if (navigator.onLine) {
+      setWarningAlert("");
+    } else {
+      setWarningAlert("You are offline. The displayed list may not be up to date.");
+    }
    fetchData();
  }, [currentCity, currentNOE, fetchData]);
 
  return (
     <div className="App">
+      <h1>Meet App</h1>
+      <p>Choose your nearest city</p>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert}/> : null}
       </div>
-      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} setWarningAlert={setWarningAlert}/>
-      <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} setWarningAlert={setWarningAlert}/>
+      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
+      <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
       <EventList events={events} />
     </div>
   );
