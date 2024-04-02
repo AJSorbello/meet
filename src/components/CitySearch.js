@@ -37,14 +37,15 @@ const handleItemClicked = (event) => {
   };
   return (
     <div id="city-search">
-      <input
-        type="text"
-        className="city"
-                placeholder="Search for a city"
-        value={query}
-        onFocus={() => setShowSuggestions(true)}
-        onChange={handleInputChanged}
-      />
+     <input
+  type="text"
+  className="city"
+  id="citySearch" // added id attribute
+  placeholder="Search for a city"
+  value={query}
+  onFocus={() => setShowSuggestions(true)}
+  onChange={handleInputChanged}
+/>
          {showSuggestions ?
         <ul className="suggestions">
             {suggestions.map((suggestion) => {
