@@ -15,7 +15,7 @@ const CityEventsChart = ({ allLocations, events }) => {
 
   useEffect(() => {
     setData(getData()); // eslint-disable-next-line
-  }, [`${data}`]);
+  }, [`${events}`]);
 
   const getData = () => {
     const data = allLocations.map((location) => {
