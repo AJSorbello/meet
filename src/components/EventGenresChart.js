@@ -1,4 +1,4 @@
-import { PieChart, Pie, ResponsiveContainer, Cell, Legend } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer, Cell, Legend, Tooltip } from 'recharts';
 import { useState, useEffect } from "react";
 
 const EventGenresChart = ({ events }) => {
@@ -57,6 +57,7 @@ const EventGenresChart = ({ events }) => {
          ))}
             </Pie>
             <Legend layout="horizontal" align="center" verticalAlign="bottom" />
+      <Tooltip cursor={{ strokeDasharray: "3 3" }} />
       </PieChart>
     </ResponsiveContainer>
   );
