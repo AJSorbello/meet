@@ -6,6 +6,7 @@ import { extractLocations, getEvents } from './api';
 import './App.css';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import CityEventsChart from './components/CityEventsChart';
+import EventsGenresChart from './components/EventGenresChart';
 const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
@@ -52,7 +53,10 @@ const App = () => {
       </div>
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
       <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+      <div className="charts-container">
+        <EventsGenresChart events={events} />
       <CityEventsChart allLocations={allLocations} events={events} />
+      </div>
       <EventList events={events} />
     </div>
   );

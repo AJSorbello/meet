@@ -1,5 +1,4 @@
 // src/components/CityEventsChart.js
-
 import { useState, useEffect } from "react";
 import {
   ScatterChart,
