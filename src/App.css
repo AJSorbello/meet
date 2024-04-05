@@ -16,7 +16,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: deepskyblue;
+  background-color: rgb(255, 255, 255);
 }
 
 .App * {
@@ -27,7 +27,7 @@
   grid-template-columns: 1fr 1fr;
   padding-bottom: 20px; 
   padding-top: 20px;
-  background-color: azure;
+  background-color: white;
 }
 
 .city {
@@ -35,7 +35,7 @@
 }
 
 .details-btn {
-  position: absolute;
+  /* position: absolute; */
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
@@ -46,13 +46,14 @@
   border: 1px solid #ccc;
   font-size: 14px;
   line-height: 20px;
+  margin-top: 10px;
 }
 
 .details-btn:hover {
   background-color: lightblue; /* Replace with the color you want */
 }
 
-.event {
+/* .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
@@ -60,8 +61,16 @@
   border-radius: 4px;
   position: relative;
   background-color:azure;
+} */
+.event {
+  padding: 10px 10px 35px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: none; /* This line hides the border */
+  border-radius: 4px;
+  position: relative;
+  background-color:white;
 }
-
 #city-search {
   display: flex;
   flex-direction: column;
