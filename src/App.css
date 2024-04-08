@@ -1,10 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
-@media (max-width: 768px)
-{
-  .charts-container {
-    grid-template-columns: 1fr;
-  } 
-}
+
 .alerts-container {
   position: fixed;
   top: 0px;
@@ -28,6 +23,13 @@
   padding-bottom: 20px; 
   padding-top: 20px;
   background-color: white;
+
+}
+@media (max-width: 768px)
+{
+  .charts-container {
+    grid-template-columns: 1fr;
+  } 
 }
 
 .city {
