@@ -8,7 +8,6 @@ import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import CityEventsChart from './components/CityEventsChart';
 import EventsGenresChart from './components/EventGenresChart';
 
-
 const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
@@ -47,7 +46,7 @@ const App = () => {
  return (
     <div className="App">
       <header className="App-header"> 
-        <img src={process.env.PUBLIC_URL + '/MeetLogo192.jpg'} alt="Logo" className="logo" />
+        <img src={process.env.PUBLIC_URL + '/MeetLogo144.jpg'} alt="Logo" className="logo" />
       <h1 className="title">City Linkup</h1>
       </header>
       <p className="description">Choose your nearest city</p>
