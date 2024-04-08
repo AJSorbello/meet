@@ -90,7 +90,26 @@
   margin: auto;
   position: relative;
 }
-
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* Change this line */
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px)
+{
+  .App-header {
+    justify-content: center;
+  } 
+}
+.logo {
+  margin-right: 10px;
+  border-radius: 50%; /* Add this line */
+  width: 50px; /* Add this line */
+  height: 50px; /* Add this line */
+}
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
