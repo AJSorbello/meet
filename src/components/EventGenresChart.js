@@ -1,22 +1,20 @@
 import { PieChart, Pie, ResponsiveContainer, Cell, Legend, Tooltip } from 'recharts';
 import { useState, useEffect } from "react";
 
+const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
 const EventGenresChart = ({ events }) => {
   const [data, setData] = useState([]);
-  const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
 
-  const getData = () => {
-    return genres.map(genre => {
+  useEffect(() => {
+    const data = genres.map(genre => {
       const filteredEvents = events.filter(event => event.summary.includes(genre));
       return {
         name: genre,
         value: filteredEvents.length
       };
     });
-  };
 
-  useEffect(() => {
-    setData(getData()); // eslint-disable-next-line
+    setData(data()); 
   }, [events]);
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
