@@ -14,7 +14,7 @@ const EventGenresChart = ({ events }) => {
       };
     });
 
-    setData(data()); 
+    setData(data); 
   }, [events]);
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -39,25 +39,25 @@ const EventGenresChart = ({ events }) => {
  };
 
   return (
-    <ResponsiveContainer width="99%" height={400}>
-      <PieChart> width={730} height={250}
-        <Pie
-          data={data}
-          dataKey="value"
-          fill="#8884d8"
-          labelLine={false}
-          label={renderCustomizedLabel}
-          cx="50%" cy="50%" 
-          outerRadius={140}
-        >
-         {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-         ))}
-            </Pie>
-            <Legend layout="horizontal" align="center" verticalAlign="bottom" />
-      <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-      </PieChart>
-    </ResponsiveContainer>
+   <ResponsiveContainer width="99%" height={400}>
+  <PieChart>
+    <Pie
+      data={data}
+      dataKey="value"
+      fill="#8884d8"
+      labelLine={false}
+      label={renderCustomizedLabel}
+      cx="50%" cy="50%" 
+      outerRadius={140}
+    >
+      {data.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+      ))}
+    </Pie>
+    <Legend layout="horizontal" align="center" verticalAlign="bottom" />
+    <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+  </PieChart>
+</ResponsiveContainer>
   );
 };
 
