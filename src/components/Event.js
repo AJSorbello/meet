@@ -10,8 +10,10 @@ const endTime = new Date(event.end.dateTime).toLocaleTimeString();
       <h3>{event?.summary}</h3>
       <p>{event?.location}</p>
       <p>Time: {startTime} - {endTime}</p>
-      {showDetails ?
-        <p className="details">{event.description}</p> :
+       {showDetails ?
+        <div className="details-container">
+          <p className="details">{event.description}</p>
+        </div> :
         null
       }
         <button
