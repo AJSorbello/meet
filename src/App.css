@@ -128,3 +128,16 @@ ul {
   padding: 0;
   list-style: none;
 }
+.title {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
+}
+
+.description {
+  text-align: center;
+}

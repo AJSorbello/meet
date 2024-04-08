@@ -28,6 +28,8 @@ setErrorAlert(errorText);
   id="number-of-events"
   className="numberofevents"
   value={numberOfEvents}
+  min="0"
+  max="32"
   onChange={handleInputChange}
 />
     </div>
