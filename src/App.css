@@ -126,7 +126,25 @@ input[type="number"] {
 p {
   margin: 5px 0;
 }
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
+#citySearch {
+  flex-grow: 1;
+  padding-right: 30px; /* Adjust this value as needed */
+}
+
+.icon-container {
+  position: absolute;
+  right: 10px;
+}
+
+.search-icon {
+  pointer-events: none;
+}
 .suggestions {
   width: 250px;
   position: absolute;
